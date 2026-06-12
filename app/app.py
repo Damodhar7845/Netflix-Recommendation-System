@@ -16,10 +16,19 @@ st.set_page_config(
 # Load Saved Files
 # ==================================
 
-movie_info = pickle.load(open("movie_info.pkl", "rb"))
-similarity_scores = pickle.load(open("similarity_scores.pkl", "rb"))
-movie_titles = pickle.load(open("movie_titles.pkl", "rb"))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+movie_info = pickle.load(
+    open(os.path.join(BASE_DIR, "movie_info.pkl"), "rb")
+)
+
+similarity_scores = pickle.load(
+    open(os.path.join(BASE_DIR, "similarity_scores.pkl"), "rb")
+)
+
+movie_titles = pickle.load(
+    open(os.path.join(BASE_DIR, "movie_titles.pkl"), "rb")
+)
 # ==================================
 # Recommendation Function
 # ==================================
